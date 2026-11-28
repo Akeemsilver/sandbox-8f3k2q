@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en"><head><meta name="robots" content="noindex, nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://apis.google.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' data: blob:; connect-src 'self' data: blob: https://*.googleapis.com https://*.firebaseio.com wss://*.firebaseio.com https://www.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://docs.google.com https://*.googleusercontent.com https://hhsl-ert-roster.firebaseapp.com https://hhsl-ert-roster-staging.firebaseapp.com; worker-src 'self' blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; frame-src https://hhsl-ert-roster.firebaseapp.com https://hhsl-ert-roster-staging.firebaseapp.com; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light"><meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer">
+<title>Leave application - HHSL Safety Systems Limited</title>
+<link rel="icon" href="icons/favicon.png">
+<style>
+@font-face{font-family:Lato;src:url(assets/lato-400.cbff48bc.woff2) format('woff2');font-weight:100 500;font-display:swap}
+@font-face{font-family:Lato;src:url(assets/lato-700.a53ca001.woff2) format('woff2');font-weight:600 900;font-display:swap}
+:root{--brand:#14506B;--ink:#14181D;--muted:#4A5661;--line:#C9D1D9;--bg:#EEF2F5;--surface:#fff;--soft:#E3EBF0;--exp:#B3261E;--ok:#1E7A45}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:Lato,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%}
+.top{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;background:#fff;border-bottom:1px solid var(--line)}
+.top img{width:40px;height:40px;border-radius:50%;flex:none}.top b{display:block;font-size:15px}.top span{font-size:13px;color:var(--muted)}
+main{max-width:760px;margin:0 auto;padding:12px 12px 60px}
+.msg{background:#fff;border-radius:18px;padding:22px 20px;margin:14px 4px;box-shadow:0 1px 2px rgba(16,24,40,.06),0 8px 22px rgba(16,24,40,.07)}
+.msg h1{margin:0 0 8px;font-size:22px}.msg h2{margin:0 0 6px;font-size:18px}.msg p{margin:6px 0;line-height:1.5;color:var(--muted)}
+.center{text-align:center}.big{font-size:26px;font-weight:900;color:var(--brand);margin:6px 0 14px}
+.hint{margin:6px 0 4px;font-size:13.5px;line-height:1.45;color:var(--muted)}.hint.warn{color:var(--exp);font-weight:700}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;margin:8px 0;padding:0 16px;border-radius:14px;border:1px solid var(--brand);background:var(--brand);color:#fff;font:inherit;font-weight:800;font-size:16px;cursor:pointer}
+.btn.g{background:#fff;color:var(--brand);border-color:var(--line)}.btn[disabled]{opacity:.5;cursor:default}
+.spin{display:inline-block;width:18px;height:18px;border:3px solid #c8d3dc;border-top-color:var(--brand);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-3px;margin-right:8px}@keyframes sp{to{transform:rotate(360deg)}}
+.grid2{display:grid;grid-template-columns:1fr;gap:0 16px}@media(min-width:640px){.grid2{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:13px;font-weight:700;color:var(--muted);margin:12px 0 4px}label i{color:var(--exp);font-style:normal}
+.in,input[type=text],input[type=tel],input[type=email],input[type=date],select{width:100%;min-height:46px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+.lock{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:46px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--soft);color:var(--muted)}
+.lock button{border:0;background:none;color:var(--brand);font:inherit;font-weight:800;cursor:pointer;padding:6px 4px}
+.photo{border:2px dashed #14506B88;border-radius:12px;padding:14px;text-align:center;background:#F5FAFC;color:var(--brand);font-weight:700;cursor:pointer}
+.photo small{display:block;color:var(--exp);font-weight:700;margin-top:2px;font-size:12.5px}.photo.has{border:2px solid var(--ok);background:#E9F4EC;color:var(--ok)}.photo.has small{color:var(--muted)}
+.photo input{display:none}
+.tgl{display:flex;align-items:center;gap:10px;margin:14px 0 2px;font-weight:700}.tgl input{width:22px;height:22px}
+.errs{background:#FDECEA;border:1.5px solid var(--exp);border-radius:12px;padding:12px 14px;margin:10px 4px;color:var(--exp);font-weight:700}.errs ul{margin:6px 0 0 18px;padding:0}
+.dim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:50;display:flex;align-items:center;justify-content:center;padding:18px}
+.modal{background:#fff;border-radius:18px;padding:20px;max-width:440px;width:100%;box-shadow:0 14px 40px rgba(0,0,0,.4)}.modal h2{margin:0 0 6px}.em{font-size:19px;font-weight:900;word-break:break-all;margin:10px 0}
+[hidden]{display:none!important}
+</style>
+<style>
+:root{color-scheme:light}
+.lv-kv{display:grid;grid-template-columns:auto auto;gap:4px 14px;font-size:15px;text-align:left;margin:4px auto 14px;width:max-content;max-width:100%}.lv-kv span{color:#5b6670}
+.sigbox{width:100%;height:120px;border:1.5px dashed #9aa4ad;border-radius:12px;background:#fff;color:#14506B;font:inherit;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:6px}
+.sigbox img{max-width:100%;max-height:100%}.sigok{font-size:13px;color:#5b6670;margin:6px 0 0}
+#sgov{position:fixed;inset:0;z-index:50;background:#fff;overflow:hidden;touch-action:none;color:#14181D}#sgin{position:absolute;left:0;top:0;display:flex;flex-direction:column;background:#fff}
+#sgin .tip{padding:calc(10px + env(safe-area-inset-top,0px)) 18px 4px;font-size:15px;font-weight:700}#sgin .area{position:relative;flex:1;margin:6px 18px;border:1.5px dashed #9aa4ad;border-radius:12px;overflow:hidden}
+#sgin canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}#sgin .line{position:absolute;left:8%;right:8%;bottom:28%;border-bottom:1.5px solid #c4cbd2;pointer-events:none}#sgin .line i{position:absolute;left:-4%;bottom:2px;font-style:normal;font-size:22px;color:#9aa4ad}
+#sgin .bar{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:8px 18px calc(10px + env(safe-area-inset-bottom,0px))}#sgin .bar .btn{margin:0}
+.seg2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px}.seg2 button{min-height:46px;border-radius:10px;border:1.5px solid #c9d1d9;background:#fff;color:#14181D;font:inherit;font-weight:700}.seg2 button[aria-pressed=true]{background:#14506B;border-color:#14506B;color:#fff}
+.tgl small,.photo small.n{display:block;color:#5b6670!important;font-weight:400;font-size:13px;margin-top:2px}.lvsec{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#5b6670;margin:18px 0 8px}
+/* V5.23: the same form as the app */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 6px}.chip{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid #c9d1d9;background:#fff;color:#14181D;font:inherit;font-size:15px;font-weight:700;cursor:pointer}.chip[aria-pressed=true]{background:#14506B;border-color:#14506B;color:#fff}
+textarea{width:100%;min-height:70px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+.due{margin:14px 0 4px;padding-top:12px;border-top:1px solid var(--line)}.due label{margin:0 0 2px}.dueb{display:block;font-size:17px;font-weight:800;color:var(--ink)}.dueb.mu{color:var(--muted)}
+.priv{background:#E8F0F6;border-radius:10px;padding:10px 12px;font-size:13.5px;color:var(--muted)!important;margin:8px 0}.decl{color:var(--ink)!important}
+.sum{background:var(--soft);border-radius:12px;padding:12px 14px}.sglinks{display:flex;gap:18px;margin:6px 0 0}.lnk{border:0;background:none;color:var(--brand);font:inherit;font-weight:800;font-size:15px;padding:8px 0;cursor:pointer}
+input[type=text]#dn,#sgt{width:100%}
+
+</style>
+</head>
+<body>
+<header class="top"><img src="assets/logo-round.3f5b0675.webp" alt=""><div><b>HHSL Safety Systems Limited</b><span id="sub">Leave application</span></div></header>
+<main id="main"><div class="msg"><p><span class="spin"></span>Opening your link…</p></div></main>
+<div class="dim" id="dim" hidden></div>
+<script>
+(function(){
+'use strict';
+var K='';try{K=new URLSearchParams(location.search).get('k')||''}catch(e){}
+var $=function(s){return document.querySelector(s)};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+var main=$('#main'),dim=$('#dim'),INFO=null,CN=function(){return INFO&&INFO.cert!=null?INFO.cert:2},SIG=false,CERT='',DOC='',WHERE='';
+var TN={vac:'Vacation leave',sick:'Sick leave',other:'Casual leave'},MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function pd(d){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||'');return m?{y:m[1],m:+m[2],d:+m[3]}:null}
+function dates(a,b){var x=pd(a),y=pd(b||a);if(!x)return '';var ny=String(new Date().getFullYear()),yr=function(p){return p.y===ny?'':' '+p.y};if(!b||a===b)return x.d+' '+MON[x.m-1]+yr(x);if(x.y===y.y&&x.m===y.m)return x.d+' \u2013 '+y.d+' '+MON[y.m-1]+yr(y);return x.d+' '+MON[x.m-1]+(x.y!==y.y?yr(x):'')+' \u2013 '+y.d+' '+MON[y.m-1]+yr(y)}
+function longDay(iso){var d=new Date(iso);return isNaN(d)?'':d.getDate()+' '+MON[d.getMonth()]+' '+d.getFullYear()}
+function call(o){o.k=K;return fetch('/.netlify/functions/lvapp',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(o)}).then(function(r){return r.json()})}
+function msg(h){main.innerHTML=h;window.scrollTo(0,0)}
+function endPage(t,x,ic){msg('<div class="msg center"><div style="font-size:42px">'+(ic||'\u23F3')+'</div><h1>'+esc(t)+'</h1><p>'+esc(x)+'</p></div>')}
+var STATES={expired:['This link no longer works','It is older than 7 days. Ask the office to send you a new one.'],used:['Already sent','This application was already sent. Thank you.','\u2705'],invalid:['This link no longer works','Ask the office to send you a new one.']};
+function bad(s){var x=STATES[s]||STATES.invalid;endPage(x[0],x[1],x[2])}
+/* a pop-up like the app's: a title, a line, and the buttons */
+function ask(title,text,btns){return new Promise(function(res){dim.hidden=false;dim.innerHTML='<div class="modal" role="dialog" aria-modal="true"><h2>'+esc(title)+'</h2><p>'+esc(text)+'</p>'+btns.map(function(b,i){return '<button class="btn'+(b.g?' g':'')+'" data-i="'+i+'">'+esc(b.t)+'</button>'}).join('')+'</div>';
+ dim.onclick=function(ev){var b=ev.target.closest('[data-i]');if(!b)return;dim.hidden=true;dim.innerHTML='';res(btns[+b.dataset.i].v)}})}
+/* step 1: is it you? */
+if(!/^[A-Za-z0-9_-]{32}$/.test(K))bad('invalid');else call({action:'open'}).then(function(r){if(!r||!r.ok)return bad(r&&r.state);INFO=r;who()}).catch(function(){endPage('No connection','We could not reach HHSL. Check your signal and open the link again.','\u26A0\uFE0F')});
+function who(){var nm=INFO.name||INFO.label,cl=INFO.mode==='close';msg('<div class="msg center"><div style="font-size:42px">\uD83D\uDC4B</div><h1>Is this you?</h1><p style="color:var(--ink);font-size:16px">'+(cl?'You are closing your sick leave as':'You are applying for leave as')+'</p><div class="big">'+esc(nm)+'</div>'+
+ '<div class="lv-kv"><span>Leave</span><b>'+esc(TN[INFO.type]||'Leave')+'</b><span>Dates</span><b>'+esc(INFO.ongoing?dates(INFO.start)+' \u2013 not known yet':dates(INFO.start,INFO.end))+'</b></div>'+
+ '<button class="btn" id="yes">Yes, this is me</button><button class="btn g" id="no">This isn\u2019t me</button><p class="hint">This link works once and expires on '+esc(longDay(INFO.expiresAt))+'.</p></div>');
+ $('#yes').onclick=INFO.mode==='close'?closeForm:form;$('#no').onclick=function(){call({action:'wrong'}).then(function(){endPage('Thank you','We have told the office that this link reached the wrong person.','\uD83D\uDC4D')})}}
+function inp(id,lbl,type,val,extra){return '<label>'+esc(lbl)+(extra||'')+'<input id="'+id+'" type="'+type+'" value="'+esc(val||'')+'"'+(type==='tel'?' inputmode="tel"':'')+'></label>'}
+/* step 2 (V5.23): the same form as the app (First day, Number of days, Last day, Due back; the illness chips; the one signature card) */
+var ILLS=['Cold or flu','Fever','Stomach upset','Injury','Migraine','Dental','Medical appointment','Other'],PRIV={'Injury':1,'Medical appointment':1,'Other':1},ILL='',SIGTAB='draw',WD=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],MONL=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function addD(d,n){var x=new Date(d+'T12:00:00');x.setDate(x.getDate()+n);return x.getFullYear()+'-'+('0'+(x.getMonth()+1)).slice(-2)+'-'+('0'+x.getDate()).slice(-2)}
+function isD(s){return /^\d{4}-\d{2}-\d{2}$/.test(String(s||''))}
+function isWork(d){var W=INFO.work||[];if(W.length&&d>=W[0]&&d<=W[W.length-1])return W.indexOf(d)>-1;var w=new Date(d+'T12:00:00').getDay();return w!==0&&w!==6}
+function kindOf(d){var W=INFO.work||[],i=W.indexOf(d),k=(INFO.kinds||'').charAt(i);return INFO.shift&&i>-1?(k==='n'?'night shift':k==='d'?'day shift':''):''}
+function isDay(d){return INFO.type==='sick'||isWork(d)}
+function countW(a,b){if(!isD(a)||!isD(b)||b<a)return 0;var n=0,d=a,g=0;while(d<=b&&g++<400){if(isDay(d))n++;d=addD(d,1)}return n}
+function endFor(a,n){n=Math.ceil(+n||0);if(!isD(a)||!(n>0))return '';var d=a,c=0,g=0;while(g++<400){if(isDay(d)){c++;if(c>=n)return d}d=addD(d,1)}return ''}
+function backAfter(e){if(!isD(e))return '';var d=addD(e,1),g=0;while(g++<40&&!isWork(d))d=addD(d,1);return d}
+function longD(d){var x=new Date(d+'T12:00:00');if(!isD(d)||isNaN(x))return '';return WD[x.getDay()]+' '+x.getDate()+' '+MONL[x.getMonth()]+(x.getFullYear()!==new Date().getFullYear()?' '+x.getFullYear():'')}
+function unitW(){return INFO.shift?'shift':'working'}
+function dueNow(){var a=$('#d1').value,n=parseFloat(String($('#dn').value||'').replace(',','.'))||0,b=$('#d2').value,sick=INFO.type==='sick';if(isD(a)&&n>0&&!isD(b))b=endFor(a,n);
+ if(!isD(a)||(!isD(b)&&!sick))return {big:'Fills in by itself',sub:'When you pick the first day and the number of days (or the last day), your day back is worked out from your '+(INFO.shift?'shift cycle':'schedule')+'.',mu:1,end:b,ret:'',days:0};
+ if(!isD(b))return {big:'Not known yet',sub:'No number of days and no last day: this is ongoing sick leave. You send a closing application when you are back.',mu:1,end:'',ret:'',days:0,ongoing:1};
+ var r=backAfter(b),k=kindOf(r),c=n>0?n:countW(a,b);return {big:longD(r)+(k?' ('+k+')':''),sub:sick?'Your next '+(INFO.shift?'shift':'working day')+' after the '+c+' day'+(c===1?'':'s')+'. Every day counts for sick leave, rest days too.':INFO.shift?'Your next shift after the '+c+' shift day'+(c===1?'':'s')+' (rest days are skipped). Worked out from your shift cycle.':'Your next working day after the '+c+' working day'+(c===1?'':'s')+'. Worked out from your schedule.',end:b,ret:r,days:c}}
+function paintDue(){var o=dueNow(),d=$('#due');if(!d)return;d.innerHTML='<label>Due back</label><b class="dueb'+(o.mu?' mu':'')+'">'+esc(o.big)+'</b><p class="hint">'+esc(o.sub)+'</p>';var m=$('#medn');if(m){var need=o.days>CN();m.className='hint'+(need?' warn':'');m.textContent=need?'More than '+CN()+' '+(INFO.type==='sick'?'':unitW()+' ')+'days: a medical certificate is needed.':'Not needed for '+CN()+' '+(INFO.type==='sick'?'':unitW()+' ')+'days or less.'}paintSum()}
+function paintSum(){var s=$('#sum');if(!s)return;var o=dueNow(),a=$('#d1').value;s.innerHTML='<div class="lv-kv" style="margin:0;width:auto"><span>Leave</span><b>'+esc(TN[INFO.type]||'Leave')+'</b><span>Dates</span><b>'+esc(isD(a)?(o.ongoing?dates(a)+' \u2013 not known yet':isD(o.end)?dates(a,o.end):dates(a)):'Not chosen yet')+'</b><span>Due back</span><b>'+esc(o.mu?o.big:o.big)+'</b>'+(INFO.type==='sick'?'<span>Sick with</span><b>'+esc(ILL?(PRIV[ILL]?ILL+' (private)':ILL):'Not chosen')+'</b>':'')+'</div>'}
+function chips(){return '<div class="chips" id="ill">'+ILLS.map(function(x){return '<button type="button" class="chip" data-v="'+esc(x)+'" aria-pressed="'+(ILL===x)+'">'+(PRIV[x]?'\uD83D\uDD12 ':'')+esc(x)+'</button>'}).join('')+'</div>'}
+function form(){var sick=INFO.type==='sick',sh=!!INFO.shift;
+ var h='<div class="msg"><h1>Your '+esc((TN[INFO.type]||'leave').toLowerCase())+' application</h1><p>Check the dates, answer the questions, then sign.</p>'+
+  '<div class="lvsec">Dates</div>'+inp('d1',sick?'First day sick':'First day of leave','date',INFO.start)+
+  '<label>'+(sh&&INFO.type!=='sick'?'Number of shift days':'Number of days')+' (optional)<input id="dn" type="text" inputmode="decimal" placeholder="'+(INFO.type==='sick'?'Days':sh?'Shift days':'Working days')+'" value="'+(INFO.ongoing||!INFO.days?'':esc(String(INFO.days)))+'"></label>'+
+  inp('d2',(sick?'Last day sick':'Last day of leave')+' (optional, fills in by itself)','date',INFO.ongoing?'':INFO.end)+'<div class="due" id="due"></div>';
+ if(sick)h+='<div class="lvsec">What were you sick with?</div>'+chips()+'<p class="hint">Chips without a lock are shown on the letter. \uD83D\uDD12 Injury, Medical appointment, Other and anything you type are private: only senior management can see them.</p>'+
+  '<label>Symptoms or details (optional)<textarea id="sym" maxlength="400" rows="2"></textarea></label><p class="priv">\uD83D\uDD12 What you type here is private: only senior management can see it. It is never printed on the letter.</p>'+
+  '<div class="lvsec">Medical certificate</div><label>Did you see a doctor?</label><div class="seg2" id="doc"><button type="button" data-v="yes" aria-pressed="false">Yes</button><button type="button" data-v="no" aria-pressed="false">No</button></div><p class="hint" id="medn"></p>'+
+  '<div class="photo" id="ph"><b>Medical certificate</b><small class="n">Take a photo or pick one.</small><input id="ct" type="file" accept="image/*"></div>'+inp('ph2','Phone while on sick leave','tel','');
+ else h+='<div class="lvsec">Where will you spend your leave?</div><div class="seg2" id="where"><button type="button" data-v="here" aria-pressed="false">In Trinidad and Tobago</button><button type="button" data-v="abroad" aria-pressed="false">Outside the country</button></div>'+inp('dest','Country or destination (if abroad)','text','')+
+  '<div class="lvsec">How to reach you while on leave</div>'+inp('addr','Address during leave','text','')+inp('ph2','Phone','tel','')+inp('em','Email (optional)','email','')+
+  '<div class="lvsec">Emergency contact (optional)</div>'+inp('emn','Name','text','')+inp('emp','Phone','tel','')+'<div class="lvsec">Your work while you are away</div>'+inp('cov','Who covers for you (optional)','text','')+'<label>Reason or comments (optional)<textarea id="rs" maxlength="300"></textarea></label>';
+ h+='<div class="lvsec">Your application</div><div class="sum" id="sum"></div>'+
+  '<div class="lvsec">Sign</div><p class="decl">'+(sick?'I confirm that I was unwell and unable to work on the days above. The information I have given is true.':'I apply for the '+(INFO.type==='other'?'casual':'vacation')+' leave above. I will return to work on the date shown, and I will tell the office as soon as possible if anything changes.')+'</p>'+
+  '<label class="tgl"><input type="checkbox" id="ag"> I confirm the details are correct.</label>'+
+  '<div class="seg2" id="stab"><button type="button" data-v="draw" aria-pressed="true">Draw</button><button type="button" data-v="type" aria-pressed="false">Type</button></div>'+
+  '<div id="sdraw"><button type="button" class="sigbox" id="sgb">Tap to sign</button><p class="sigok" id="sgk"></p><div class="sglinks"><button type="button" class="lnk" id="sgfull">\u26F6 Full screen</button><button type="button" class="lnk" id="sgclear">Clear</button></div></div>'+
+  '<div id="stype" hidden><input id="sgt" type="text" placeholder="Type your full name" autocomplete="name"></div>'+
+  '<div class="errs" id="er" hidden></div><button class="btn" id="go">Send my application</button><button class="btn g" id="wrong">Something is wrong</button></div>';
+ msg(h);
+ [].forEach.call(document.querySelectorAll('.seg2'),function(g){g.onclick=function(ev){var b=ev.target.closest('button');if(!b)return;[].forEach.call(g.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',String(x===b))});if(g.id==='doc')DOC=b.dataset.v;else if(g.id==='where')WHERE=b.dataset.v;else if(g.id==='stab'){SIGTAB=b.dataset.v;$('#sdraw').hidden=SIGTAB!=='draw';$('#stype').hidden=SIGTAB!=='type'}}});
+ var ill=$('#ill');if(ill)ill.onclick=function(ev){var b=ev.target.closest('button');if(!b)return;ILL=ILL===b.dataset.v?'':b.dataset.v;[].forEach.call(ill.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',String(x.dataset.v===ILL))});paintSum()};
+ /* typing the days fills the last day; typing the last day fills the days */
+ $('#dn').oninput=function(){var a=$('#d1').value,n=parseFloat(String(this.value||'').replace(',','.'))||0;if(isD(a)&&n>0)$('#d2').value=endFor(a,n);paintDue()};
+ $('#d2').onchange=$('#d2').oninput=function(){var a=$('#d1').value,b=this.value;if(isD(a)&&isD(b)&&b>=a)$('#dn').value=String(countW(a,b)||'');else if(!b)$('#dn').value='';paintDue()};
+ $('#d1').onchange=$('#d1').oninput=function(){var a=this.value,n=parseFloat(String($('#dn').value||'').replace(',','.'))||0;if(isD(a)&&n>0)$('#d2').value=endFor(a,n);paintDue()};
+ if(sick)$('#ct').onchange=function(ev){var f=ev.target.files&&ev.target.files[0];if(!f)return;shrink(f,function(d){CERT=d;var p=$('#ph');p.classList.toggle('has',!!d);p.querySelector('small').textContent=d?'Photo added':'That photo could not be used. Try another.'})};
+ if(isD(INFO.start)&&INFO.days&&!INFO.ongoing&&!isD($('#d2').value))$('#d2').value=endFor(INFO.start,INFO.days);
+ paintDue();showSig();$('#sgb').onclick=openPad;$('#sgfull').onclick=openPad;$('#sgclear').onclick=function(){SIGURL='';showSig()};$('#go').onclick=send;$('#wrong').onclick=decline}
+/* the closing application: the last day off and the day back at work, signed */
+function closeForm(){msg('<div class="msg"><h1>Closing your sick leave</h1><p>Your sick leave started on '+esc(dates(INFO.start))+'. Give the last day you were off and the day you went back to work, then sign.</p>'+
+ '<div class="lvsec">Dates</div>'+inp('cl1','Last day you were off','date','')+inp('cl2','Day you went back to work','date','')+
+ '<div class="photo" id="ph"><b>Medical certificate</b><small class="n">Needed for more than '+CN()+' days. Take a photo or pick one.</small><input id="ct" type="file" accept="image/*"></div>'+
+ '<div class="lvsec">Your signature</div><button type="button" class="sigbox" id="sgb">Tap to sign</button><p class="sigok" id="sgk">The signing space turns sideways, so you can sign across the whole screen.</p>'+
+ '<label class="tgl"><input type="checkbox" id="ag"> I confirm that the information I have given is true.</label><div class="errs" id="er" hidden></div><button class="btn" id="go">Send closing application</button><button class="btn g" id="wrong">Something is wrong</button></div>');
+ $('#ct').onchange=function(ev){var f=ev.target.files&&ev.target.files[0];if(!f)return;shrink(f,function(d){CERT=d;var p=$('#ph');p.classList.toggle('has',!!d);p.querySelector('small').textContent=d?'Photo added':'That photo could not be used. Try another.'})};
+ showSig();$('#sgb').onclick=openPad;$('#wrong').onclick=decline;$('#go').onclick=async function(){var a=$('#cl1').value,b=$('#cl2').value;
+  if(!SIGURL){await ask('Sign first','Your closing application cannot be sent without your signature.',[{t:'OK',v:1}]);return}
+  if(!a||!b){await ask('Dates needed','Choose the last day you were off and the day you went back to work.',[{t:'OK',v:1}]);return}
+  if(!$('#ag').checked){await ask('Confirm first','Tick the box to confirm that the information is true.',[{t:'OK',v:1}]);return}
+  if(!CERT&&days(INFO.start,a)>CN()){if(!await ask('Medical certificate needed','More than '+CN()+' days needs a medical certificate. Send anyway?',[{t:'Go back',v:0,g:1},{t:'Yes, send',v:1}]))return}
+  var go=$('#go');go.disabled=true;go.textContent='Sending\u2026';var o={action:'submit',close:true,agree:true,last:a,back:b,sig:SIGURL};if(CERT)o.cert=CERT;
+  call(o).then(function(r){if(r&&r.ok)return endPage('Sent. Thank you','Your closing application is now with HHSL. You can close this page.','\u2705');go.disabled=false;go.textContent='Send closing application';if(r&&r.state==='invalid_input'){var e=$('#er');e.hidden=false;e.innerHTML='<ul>'+(r.errors||[]).map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>';return}bad(r&&r.state)}).catch(function(){go.disabled=false;go.textContent='Send closing application';ask('No connection','Check your signal and try again.',[{t:'OK',v:1}])})}}
+function days(a,b){var x=Date.parse(a+'T12:00:00'),y=Date.parse(b+'T12:00:00');return isNaN(x)||isNaN(y)?0:Math.round((y-x)/864e5)+1}
+function typedPng(t){var c=document.createElement('canvas');c.width=900;c.height=260;var g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,c.width,c.height);g.fillStyle='#1B3E8C';var fs=96;g.font='italic '+fs+'px "Brush Script MT","Segoe Script",cursive';while(g.measureText(t).width>840&&fs>30){fs-=6;g.font='italic '+fs+'px "Brush Script MT","Segoe Script",cursive'}g.textBaseline='middle';g.fillText(t,30,135);return c.toDataURL('image/png')}
+/* sending: a pop-up for every reason it is not complete; no signature = it cannot be sent */
+async function send(){var sick=INFO.type==='sick',a=$('#d1').value,o=dueNow(),n=parseFloat(String($('#dn').value||'').replace(',','.'))||0,b=o.end,sig=SIGURL;
+ if(SIGTAB==='type'){var tt=String($('#sgt').value||'').trim();sig=tt.length>=3?typedPng(tt):''}
+ if(!sig){await ask('Sign first','Your application cannot be sent without your signature. Sign in the box, or type your name.',[{t:'OK',v:1}]);return}
+ if(!$('#ag').checked){await ask('Confirm first','Tick the box to confirm that the details are correct.',[{t:'OK',v:1}]);return}
+ if(!isD(a)){await ask('Dates needed','Choose the first day.',[{t:'OK',v:1}]);return}
+ if(!sick&&!isD(b)){await ask('Dates needed','Type the number of days or choose the last day.',[{t:'OK',v:1}]);return}
+ if(isD(b)&&b<a){await ask('Check the dates','The last day is before the first day.',[{t:'OK',v:1}]);return}
+ if(o.ongoing){if(!await ask('No end date','No end date was selected, so this is ongoing sick leave. When you are back at work you will be asked for a closing application with the last day. Send anyway?',[{t:'Go back',v:0,g:1},{t:'Yes, send',v:1}]))return}
+ if(sick&&!CERT&&o.days>CN()){if(!await ask('Medical certificate needed','More than '+CN()+' '+unitW()+' days needs a medical certificate. Send anyway?',[{t:'Go back',v:0,g:1},{t:'Yes, send',v:1}]))return}
+ var body={action:'submit',agree:true,start:a,end:o.ongoing?'':b,ongoing:!!o.ongoing,ret:o.ret||'',sig:sig,phone:($('#ph2')||{}).value||''};if(o.days)body.days=o.days;
+ if(sick){body.illness=ILL;body.symptoms=($('#sym')||{}).value||'';body.doctor=DOC;if(CERT)body.cert=CERT}else{body.where=WHERE;body.dest=$('#dest').value;body.addr=$('#addr').value;body.mail=$('#em').value;body.emName=$('#emn').value;body.emPhone=$('#emp').value;body.cover=$('#cov').value;body.reason=$('#rs').value}
+ var go=$('#go');go.disabled=true;go.textContent='Sending\u2026';
+ call(body).then(function(r){if(r&&r.ok)return endPage('Sent. Thank you','Your signed application is now with HHSL. You can close this page.','\u2705');go.disabled=false;go.textContent='Send my application';if(r&&r.state==='invalid_input'){var e=$('#er');e.hidden=false;e.innerHTML='<ul>'+(r.errors||[]).map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>';return}bad(r&&r.state)}).catch(function(){go.disabled=false;go.textContent='Send my application';ask('No connection','Check your signal and try again.',[{t:'OK',v:1}])})}
+
+function decline(){msg('<div class="msg"><h1>Something is wrong</h1><p>Tell the office what is wrong, for example the dates. They will contact you.</p><label>What is wrong<textarea id="why" maxlength="300"></textarea></label><button class="btn" id="sd">Send</button><button class="btn g" id="bk">Back</button></div>');
+ $('#bk').onclick=form;$('#sd').onclick=function(){call({action:'submit',decline:true,why:$('#why').value}).then(function(r){if(r&&r.ok)return endPage('Sent','The office has your message. Thank you.','\uD83D\uDC4D');bad(r&&r.state)})}}
+function shrink(f,cb){var img=new Image(),u=URL.createObjectURL(f);img.onload=function(){var s=Math.min(1,1600/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);var q=.75,d=c.toDataURL('image/jpeg',q);while(d.length>880000&&q>.35){q-=.1;d=c.toDataURL('image/jpeg',q)}URL.revokeObjectURL(u);cb(d.length<=880000?d:'')};img.onerror=function(){cb('')};img.src=u}
+var SIGURL='';
+/* V5.18: Tap to sign opens the whole screen; held upright, the signing space is turned sideways so the signature runs along the long side */
+function showSig(){var b=document.getElementById('sgb'),k=document.getElementById('sgk');if(!b)return;
+ if(SIGURL){b.innerHTML='<img alt="Your signature" src="'+SIGURL+'">';if(k)k.textContent='Signed. Tap the signature to sign again.'}
+ else{b.textContent='Tap to sign';if(k)k.textContent='Your phone turns the signing space sideways, so you can sign across the whole screen.'}}
+function openPad(){var ov=document.createElement('div');ov.id='sgov';
+ ov.innerHTML='<div id="sgin" role="dialog" aria-label="Sign here"><div class="tip">Sign across the screen with your finger</div><div class="area"><div class="line"><i>&times;</i></div><canvas id="sgc"></canvas></div><div class="bar"><button class="btn ghost" id="sgx" type="button">Cancel</button><button class="btn ghost" id="sgclr" type="button">Clear</button><button class="btn" id="sgok" type="button">Done</button></div></div>';
+ document.body.appendChild(ov);document.body.style.overflow='hidden';
+ var fs=false;try{var de=document.documentElement;if(de.requestFullscreen){de.requestFullscreen({navigationUI:'hide'}).then(function(){fs=true;try{screen.orientation.lock('landscape').catch(function(){})}catch(e){}}).catch(function(){})}}catch(e){}
+ var inn=document.getElementById('sgin'),cvs=document.getElementById('sgc'),area=inn.querySelector('.area'),ctx=cvs.getContext('2d'),rot=false,strokes=[],cur=null;
+ function draw(){var d=window.devicePixelRatio||1;ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,cvs.width,cvs.height);ctx.lineWidth=2.6;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#14181D';
+  strokes.forEach(function(s){if(!s.length)return;ctx.beginPath();ctx.moveTo(s[0][0],s[0][1]);if(s.length===1)ctx.lineTo(s[0][0]+.1,s[0][1]+.1);for(var i=1;i<s.length;i++)ctx.lineTo(s[i][0],s[i][1]);ctx.stroke()})}
+ function lay(){var vw=window.innerWidth,vh=window.innerHeight;rot=vh>vw;var Wd=rot?vh:vw,Ht=rot?vw:vh;inn.style.width=Wd+'px';inn.style.height=Ht+'px';inn.style.transformOrigin='0 0';inn.style.transform=rot?'translate('+vw+'px,0) rotate(90deg)':'none';
+  var d=window.devicePixelRatio||1;cvs.width=Math.max(1,Math.round(area.clientWidth*d));cvs.height=Math.max(1,Math.round(area.clientHeight*d));draw()}
+ /* the screen point -> the point on the (maybe turned) signing space */
+ function pt(e){var vw=window.innerWidth,lx,ly;if(rot){lx=e.clientY;ly=vw-e.clientX}else{lx=e.clientX;ly=e.clientY}
+  var ox=area.offsetLeft+area.clientLeft,oy=area.offsetTop+area.clientTop;return [lx-ox,ly-oy]}
+ cvs.addEventListener('pointerdown',function(e){e.preventDefault();try{cvs.setPointerCapture(e.pointerId)}catch(x){}cur=[pt(e)];strokes.push(cur);draw()});
+ cvs.addEventListener('pointermove',function(e){if(!cur)return;e.preventDefault();cur.push(pt(e));draw()});
+ var up=function(){cur=null};cvs.addEventListener('pointerup',up);cvs.addEventListener('pointercancel',up);
+ var onR=function(){setTimeout(lay,60)};window.addEventListener('resize',onR);window.addEventListener('orientationchange',onR);lay();
+ function close(){window.removeEventListener('resize',onR);window.removeEventListener('orientationchange',onR);try{if(screen.orientation&&screen.orientation.unlock)screen.orientation.unlock()}catch(e){}
+  try{if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen().catch(function(){})}catch(e){}ov.remove();document.body.style.overflow=''}
+ document.getElementById('sgx').onclick=close;
+ document.getElementById('sgclr').onclick=function(){strokes=[];draw()};
+ document.getElementById('sgok').onclick=function(){var n=0;strokes.forEach(function(s){n+=s.length});if(n<8){var t=inn.querySelector('.tip');t.textContent='Sign first, then tap Done';t.style.color='#B3261E';return}
+  /* the signature is saved small and clear: 900 px wide at most, the same line on a see-through background */
+  var w=area.clientWidth,h=area.clientHeight,sc=Math.min(1,900/w),o=document.createElement('canvas');o.width=Math.round(w*sc);o.height=Math.round(h*sc);var c=o.getContext('2d');
+  c.lineWidth=Math.max(2,2.6*sc*1.4);c.lineCap='round';c.lineJoin='round';c.strokeStyle='#14181D';
+  strokes.forEach(function(s){if(!s.length)return;c.beginPath();c.moveTo(s[0][0]*sc,s[0][1]*sc);if(s.length===1)c.lineTo(s[0][0]*sc+.1,s[0][1]*sc+.1);for(var i=1;i<s.length;i++)c.lineTo(s[i][0]*sc,s[i][1]*sc);c.stroke()});
+  var u=o.toDataURL('image/png');if(u.length>290000){var o2=document.createElement('canvas');o2.width=Math.round(o.width*.6);o2.height=Math.round(o.height*.6);o2.getContext('2d').drawImage(o,0,0,o2.width,o2.height);u=o2.toDataURL('image/png')}
+  SIGURL=u;SIG=true;close();showSig()}}
+
+})();
+</script></body></html>

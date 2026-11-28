@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en"><head><meta name="robots" content="noindex, nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://apis.google.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' data: blob:; connect-src 'self' data: blob: https://*.googleapis.com https://*.firebaseio.com wss://*.firebaseio.com https://www.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://docs.google.com https://*.googleusercontent.com https://hhsl-ert-roster.firebaseapp.com https://hhsl-ert-roster-staging.firebaseapp.com; worker-src 'self' blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; frame-src https://hhsl-ert-roster.firebaseapp.com https://hhsl-ert-roster-staging.firebaseapp.com; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta charset="utf-8"><script id="hhsl-env">/* V4.68 one zip: only the exact live address uses the live database; anything else uses staging */(function(){var h=String(location.hostname||"").toLowerCase(),L=["hhslsafety-command.netlify.app"],live=L.indexOf(h)>-1;window.HHSL_ENV={live:live,host:h,project:""};if(live)return;document.documentElement.classList.add("stg");document.addEventListener("DOMContentLoaded",function(){try{var q=function(s){return document.querySelector(s)},m=q('link[rel="manifest"]');if(!m)return;m.setAttribute("href","manifest-staging.webmanifest");document.title="HHSL STAGING";var a=q('link[rel="apple-touch-icon"]');if(a)a.setAttribute("href","icons/stg-apple-touch-icon.png");var f=q('link[rel="icon"]');if(f)f.setAttribute("href","icons/stg-favicon.png");var t=q('meta[name="theme-color"]');if(t)t.setAttribute("content","#F59E0B");var w=q('meta[name="apple-mobile-web-app-title"]');if(w)w.setAttribute("content","HHSL STAGING")}catch(e){}})})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Sign a document - HHSL Safety Systems Limited</title>
+<link rel="icon" href="icons/favicon.png">
+<style>
+@font-face{font-family:Lato;src:url(assets/lato-400.cbff48bc.woff2) format('woff2');font-weight:100 500;font-display:swap}
+@font-face{font-family:Lato;src:url(assets/lato-700.a53ca001.woff2) format('woff2');font-weight:600 900;font-display:swap}
+:root{--brand:#14506B;--ink:#14181D;--muted:#4A5661;--line:#C9D1D9;--bg:#EEF2F5;--surface:#fff;--soft:#E3EBF0;--exp:#B3261E;--ok:#1E7A45}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:Lato,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%}
+.top{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;background:#fff;border-bottom:1px solid var(--line)}
+.top img{width:40px;height:40px;border-radius:50%;flex:none}.top b{display:block;font-size:15px}.top span{font-size:13px;color:var(--muted)}
+main{max-width:760px;margin:0 auto;padding:12px 12px 150px}
+.msg{background:#fff;border-radius:18px;padding:22px 20px;margin:18px 4px;box-shadow:0 1px 2px rgba(16,24,40,.06),0 8px 22px rgba(16,24,40,.07)}
+.msg h1{margin:0 0 8px;font-size:22px}.msg p{margin:6px 0;line-height:1.5;color:var(--muted)}
+.hint{margin:6px 4px 12px;font-size:14.5px;line-height:1.45;color:var(--muted)}
+.sgpage{position:relative;margin:0 auto 14px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.15);border-radius:4px;overflow:hidden}
+.sgpage canvas{display:block}.sglay{position:absolute;inset:0}
+.sgnum{position:absolute;right:6px;bottom:4px;font-size:10px;color:#667;background:rgba(255,255,255,.8);padding:1px 5px;border-radius:6px}
+.bx{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:6px;font-weight:800;font-size:12px;overflow:hidden}
+.bx.sign{border:2px dashed #E08A00;background:rgba(255,196,0,.18);color:#8A5A00;cursor:pointer}
+.bx.sign.done{border:2px solid #1E7A45;background:rgba(30,122,69,.06)}
+.bx.sign img{max-width:100%;max-height:100%}
+.bx.txt{border:1px dashed #9aa6b2;background:rgba(20,80,107,.05);color:#1B3E8C;font-weight:700;justify-content:flex-start;padding:0 4px;white-space:nowrap}
+.endsig{background:#fff;border-radius:18px;padding:18px;margin:6px 4px 14px;box-shadow:0 1px 2px rgba(16,24,40,.06)}
+.endsig .bx{position:relative;height:90px;width:100%;max-width:340px}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding:12px 16px calc(14px + env(safe-area-inset-bottom,0px))}
+.bar .in{max-width:760px;margin:0 auto}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.4;margin-bottom:10px}.agree input{width:22px;height:22px;margin:0;flex:none;accent-color:var(--brand)}
+.row{display:flex;gap:10px}
+.btn{flex:1;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 16px;border-radius:14px;border:1px solid var(--brand);background:var(--brand);color:#fff;font:inherit;font-weight:800;font-size:16px;cursor:pointer}
+.btn.g{background:#fff;color:var(--brand);border-color:var(--line)}.btn[disabled]{opacity:.45;cursor:default}
+.sheet{position:fixed;inset:0;z-index:40;display:none;background:rgba(10,20,30,.45)}
+.sheet.on{display:flex;align-items:flex-end;justify-content:center}
+.card{width:100%;max-width:560px;background:#fff;border-radius:22px 22px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));box-shadow:0 -10px 30px rgba(0,0,0,.25)}
+@media (min-width:700px){.sheet.on{align-items:center}.card{border-radius:22px}}
+.card h2{margin:0 0 10px;font-size:19px}
+.tabs{display:flex;gap:6px;margin-bottom:10px}.tabs button{padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font:inherit;font-weight:800;font-size:14px;color:var(--brand);cursor:pointer}.tabs button[aria-pressed=true]{background:var(--brand);color:#fff;border-color:var(--brand)}
+.pad{position:relative;height:170px;border:1.5px dashed var(--line);border-radius:14px;background:#FAFBFC;touch-action:none}
+.pad canvas{width:100%;height:100%;display:block;border-radius:14px}
+.pad .clr{position:absolute;right:8px;bottom:6px;border:0;background:none;color:var(--muted);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.pad .ph{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:#9aa6b2;font-size:14px;pointer-events:none}
+.typ input,.dec textarea{width:100%;font:inherit;font-size:16px;padding:12px;border:1px solid var(--line);border-radius:12px}
+.typ .pv{height:90px;display:flex;align-items:center;justify-content:center;margin-top:10px;border:1.5px dashed var(--line);border-radius:14px;font-family:'Brush Script MT','Segoe Script','Lucida Handwriting','Apple Chancery',cursive;font-size:40px;color:#14181D;overflow:hidden;white-space:nowrap}
+.small{font-size:13px;color:var(--muted);margin-top:8px}
+.saved{display:flex;align-items:center;gap:12px;width:100%;margin:4px 0 10px;padding:8px 12px;border:2px solid var(--brand);border-radius:14px;background:#F4F8FA;font:inherit;cursor:pointer;text-align:left}
+.saved img{height:52px;max-width:60%;object-fit:contain}.saved b{margin-left:auto;color:var(--brand);font-size:15px}
+.savedh{font-size:12.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:2px 0 4px}
+.lnk{border:0;background:none;color:var(--brand);font:inherit;font-weight:800;font-size:13.5px;cursor:pointer;padding:6px 0}
+.rem{display:flex;gap:8px;align-items:center;font-size:14px;margin-top:10px}.rem input{width:20px;height:20px;margin:0;accent-color:var(--brand)}
+.bx.hh{border:1.5px dashed #2E9E5B;background:rgba(46,158,91,.08);color:#17603D;font-weight:700}
+.bx.hh img{max-width:100%;max-height:100%}
+.fullb{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:44px;margin-top:8px;border:1px dashed var(--brand);border-radius:12px;background:#F4F8FA;color:var(--brand);font:inherit;font-weight:800;font-size:15px;cursor:pointer}
+.btn.nn{flex:.8}
+.ok{color:var(--ok)}.err{color:var(--exp)}
+.spin{display:inline-block;width:18px;height:18px;border:3px solid #c8d3dc;border-top-color:var(--brand);border-radius:50%;animation:sp 0.8s linear infinite;vertical-align:-3px;margin-right:8px}@keyframes sp{to{transform:rotate(360deg)}}
+</style>
+<style id="stg-css">html.stg::before{content:'';position:fixed;top:0;left:0;right:0;height:6px;background:#F59E0B;z-index:2147483647;pointer-events:none}.stg-pill{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:50%;transform:translateX(-50%);background:#F59E0B;color:#1a1200;font:800 12px/1 system-ui,sans-serif;letter-spacing:.06em;padding:6px 12px;border-radius:999px;z-index:2147483646;pointer-events:none;box-shadow:0 1px 4px rgba(0,0,0,.3)}.stg-pill[hidden]{display:none}</style></head><body>
+<header class="top"><img src="assets/logo-round.3f5b0675.webp" alt=""><div><b>HHSL Safety Systems Limited</b><span id="sub">Document signing</span></div></header>
+<main id="main"><div class="msg"><p><span class="spin"></span>Opening the document…</p></div></main>
+<div class="bar" id="bar" hidden><div class="in">
+  <label class="agree"><input type="checkbox" id="agree"> <span>I agree to sign this document electronically, and I intend my electronic signature to have the same effect as my handwritten signature.</span></label>
+  <div class="row"><button class="btn g nn" id="notnow">Not now</button><button class="btn g" id="decline">Decline</button><button class="btn" id="finish" disabled>Finish and sign</button></div>
+  <div class="small" id="barmsg">Tap each yellow box to add your signature.</div>
+</div></div>
+<div class="sheet" id="sigsheet" role="dialog" aria-modal="true" aria-labelledby="sigh"><div class="card">
+  <h2 id="sigh">Your signature</h2>
+  <div id="savedw" hidden><div class="savedh">Saved on this device</div><button type="button" class="saved" id="usesaved"><img id="savedimg" alt="Your saved signature"><b>✓ Use this</b></button><button type="button" class="lnk" id="forget">Forget my saved signature</button></div>
+  <div class="tabs"><button id="t-draw" aria-pressed="true">Draw</button><button id="t-type" aria-pressed="false">Type</button></div>
+  <div id="p-draw"><div class="pad" id="pad"><canvas id="padc"></canvas><span class="ph" id="padph">Sign here with your finger or mouse</span><button class="clr" id="padclr">Clear</button></div><button type="button" class="fullb" id="fullsig"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 15v5h-5M20 9V4h-5M4 15v5h5"/></svg>Sign full screen (turn your phone sideways)</button></div>
+  <div id="p-type" class="typ" hidden><input id="typed" type="text" autocomplete="name" maxlength="80" aria-label="Type your name"><div class="pv" id="typv"></div></div>
+  <label class="rem"><input type="checkbox" id="remember" checked> Remember my signature on this device</label>
+
+  <div class="row" style="margin-top:12px"><button class="btn g" id="sigcancel">Cancel</button><button class="btn" id="siguse">Use this signature</button></div>
+</div></div>
+<div class="sheet" id="decsheet" role="dialog" aria-modal="true" aria-labelledby="dech"><div class="card dec">
+  <h2 id="dech">Decline to sign?</h2>
+  <p class="small" style="margin-top:0">HHSL will be told that you declined. You can add a reason.</p>
+  <textarea id="decwhy" rows="3" maxlength="500" placeholder="Reason (optional)"></textarea>
+  <div class="row" style="margin-top:14px"><button class="btn g" id="deccancel">Go back</button><button class="btn" id="decok" style="background:#B3261E;border-color:#B3261E">Decline</button></div>
+</div></div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="assets/sign-core.c37316b3.js"></script>
+<script>
+(function(){
+var CFG=((window.HHSL_ENV&&window.HHSL_ENV.live===true)?{apiKey:["AI","zaSyDc0-","e5mC8hU2","VkLUo92B","Q3BOIa9D","0a2dY"].join(""),authDomain:"hhsl-ert-roster.firebaseapp.com",projectId:"hhsl-ert-roster",storageBucket:"hhsl-ert-roster.firebasestorage.app",messagingSenderId:"473033435196",appId:"1:473033435196:web:28cb80ad0b9e14596c7b39"}:{apiKey:["AI","zaSyC_Iw","pT1Ufucl","PZLzU2M7","-Arb-Lry3","4Ux8"].join(""),authDomain:"hhsl-ert-roster-staging.firebaseapp.com",projectId:"hhsl-ert-roster-staging",storageBucket:"hhsl-ert-roster-staging.firebasestorage.app",messagingSenderId:"626932476096",appId:"1:626932476096:web:c859fc192809eb2055a525"});try{if(window.HHSL_ENV)window.HHSL_ENV.project=CFG.projectId}catch(e){}
+var $=function(id){return document.getElementById(id)};
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function show(html){$('main').innerHTML=html;$('bar').hidden=true}
+function fail(t,p){show('<div class="msg"><h1>'+esc(t)+'</h1><p>'+esc(p||'')+'</p><p>If you think this is a mistake, contact the person at HHSL Safety Systems Limited who sent you the link.</p></div>')}
+var k=new URLSearchParams(location.search).get('k')||'';
+if(!/^[A-Za-z0-9_-]{24,64}$/.test(k)){fail('This signing link is not valid','The link may be incomplete. Try opening it again from the message you received.');return}
+var db,R=null,bytes=null,seen='',sig=null,sigType='draw',H=window.HHSign;
+try{firebase.initializeApp(CFG);db=firebase.firestore()}catch(e){fail('Could not open the document','Check your internet connection and try again.');return}
+var ref=db.collection('signreq').doc(k);
+function doneScreen(r){var dl=r.status==='signed';
+  show('<div class="msg"><h1 class="'+(dl?'ok':'')+'">'+(dl?'\u2713 Signed':'Declined')+'</h1><p><b>'+esc(r.title)+'</b></p><p>'+(dl?'Thank you, '+esc(r.signedName||r.signerName)+'. Your signature was recorded on '+esc(H.when(H.ms(r.signedAt)))+'. HHSL Safety Systems Limited has been told.':'You declined to sign this document. HHSL Safety Systems Limited has been told.')+'</p>'+(dl&&bytes?'<p><button class="btn" id="mycopy" style="max-width:320px">Download your signed copy</button></p>':'')+'</div>');
+  var b=$('mycopy');if(b)b.onclick=async function(){b.disabled=true;b.textContent='Preparing…';try{var out=await H.buildSigned(bytes,Object.assign({id:k},r));H.download(out,H.fileName(r.title,'-signed'))}catch(e){alert('Could not prepare the copy. Try again.')}b.disabled=false;b.textContent='Download your signed copy'}}
+(async function(){
+  var snap;try{snap=await ref.get()}catch(e){fail('Could not open the document','Check your internet connection and try again.');return}
+  if(!snap.exists){fail('This signing link is not valid','It may have been removed by the sender.');return}
+  R=snap.data();$('sub').textContent='asks you to sign: '+(R.title||'a document');document.title='Sign: '+(R.title||'document')+' - HHSL';
+  if(R.status==='cancelled'){fail('This signing request was cancelled','The sender cancelled it. Nothing needs to be signed.');return}
+  try{var f=await db.collection('signfile').doc(k).get();if(f.exists)bytes=H.b64ToBytes(f.data().data)}catch(e){}
+  if(R.status==='signed'||R.status==='declined'){doneScreen(R);return}
+  if(!bytes){fail('Could not open the document','The document could not be loaded. Try again later.');return}
+  seen=await H.sha256(bytes);
+  if(R.status==='sent'){try{await ref.update({status:'opened',openedAt:firebase.firestore.FieldValue.serverTimestamp(),openDevice:H.device()});R.status='opened'}catch(e){}}
+  var hasSign=(R.boxes||[]).some(function(b){return b.t==='sign'});
+  $('main').innerHTML='<p class="hint">Hello '+esc(R.signerName||'')+'. <b>'+esc(R.createdByName||'HHSL Safety Systems Limited')+'</b> sent you <b>'+esc(R.title||'a document')+'</b> to sign.'+(R.note?'<br><i>\u201C'+esc(R.note)+'\u201D</i>':'')+'<br>Read it, then tap '+(hasSign?'each yellow box':'the yellow box at the end')+' to sign.</p><div id="pages"><p class="hint"><span class="spin"></span>Loading pages…</p></div>'+(hasSign?'':'<div class="endsig"><b>Sign here</b><div class="small" style="margin:4px 0 10px">Your signature, name and date are added on a page at the end of the document.</div><div class="bx sign" id="endbox" data-t="sign">\u270D Tap to sign</div></div>');
+  var width=Math.min(736,$('main').clientWidth-8);
+  try{var r=await H.renderPages(bytes,$('pages'),width);
+    (R.boxes||[]).forEach(function(b){var pg=r.pages[b.p];if(!pg)return;var d=document.createElement('div');d.className='bx '+(b.t==='sign'?'sign':'txt');d.dataset.t=b.t;d.style.left=(b.x*100)+'%';d.style.top=(b.y*100)+'%';d.style.width=(b.w*100)+'%';d.style.height=(b.h*100)+'%';
+      if(b.t==='hsign'||b.t==='hname'||b.t==='hdate'){d.className='bx hh';if(b.t==='hsign'){if(R.hhslSig)d.innerHTML='<img alt="HHSL signature" src="'+esc(R.hhslSig)+'">';else d.textContent='HHSL signs here'}else if(b.t==='hname')d.textContent=[R.hhslName,R.hhslPos].filter(Boolean).join(', ')||'HHSL name';else d.textContent=R.hhslAt?H.day(H.ms(R.hhslAt)):'HHSL date';pg.layer.appendChild(d);return}
+      d.textContent=b.t==='sign'?'\u270D Tap to sign':b.t==='name'?(R.signerName||'Name'):H.day();if(b.t==='sign'){d.setAttribute('role','button');d.tabIndex=0}pg.layer.appendChild(d)});
+    if(r.total>30)$('pages').insertAdjacentHTML('beforeend','<p class="hint">Only the first 30 pages are shown here.</p>');
+  }catch(e){$('pages').innerHTML='<p class="hint err">The pages could not be shown on this device. Try another browser.</p>';return}
+  $('bar').hidden=false;
+  document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('.bx.sign');if(b)openSig()});
+  document.addEventListener('keydown',function(ev){if((ev.key==='Enter'||ev.key===' ')&&ev.target.classList&&ev.target.classList.contains('sign')){ev.preventDefault();openSig()}});
+})();
+// signature pad (shared), and a signature remembered on this device
+var KEY='hhsl_saved_signature',pad=null;
+function savedGet(){try{var v=JSON.parse(localStorage.getItem(KEY)||'null');return v&&v.png&&/^data:image\/png;base64,/.test(v.png)?v:null}catch(e){return null}}
+function savedPaint(){var v=savedGet();$('savedw').hidden=!v;if(v)$('savedimg').src=v.png}
+function setTab(t){sigType=t;$('t-draw').setAttribute('aria-pressed',t==='draw');$('t-type').setAttribute('aria-pressed',t==='type');$('p-draw').hidden=t!=='draw';$('p-type').hidden=t!=='type';if(t==='draw')setTimeout(function(){if(!pad)pad=H.pad($('padc'),function(d){$('padph').hidden=d});else pad.resize()},0);else{$('typed').focus()}}
+$('t-draw').onclick=function(){setTab('draw')};$('t-type').onclick=function(){setTab('type')};
+$('padclr').onclick=function(){if(pad)pad.clear()};
+$('typed').addEventListener('input',function(){$('typv').textContent=$('typed').value});
+
+function openSig(){$('sigsheet').classList.add('on');savedPaint();if(!$('typed').value){$('typed').value=R.signerName||'';$('typv').textContent=$('typed').value}setTab(sigType);}
+$('sigcancel').onclick=function(){$('sigsheet').classList.remove('on')};
+$('fullsig').onclick=function(){H.fullPad({title:'Your signature - '+(R.signerName||''),onDone:function(png){if(pad&&pad.setPng)pad.setPng(png);sigType='draw';
+  try{if($('remember').checked)localStorage.setItem(KEY,JSON.stringify({png:png,type:'draw',name:'',at:Date.now()}));else localStorage.removeItem(KEY)}catch(e){}adopt(png,'draw')}})};
+$('notnow').onclick=function(){show('<div class="msg"><h1>Nothing was signed</h1><p><b>'+esc(R.title||'')+'</b></p><p>Nothing was signed or declined. You can open this link again any time to read and sign the document.</p><p><button class="btn" style="max-width:320px" onclick="location.reload()">Open the document again</button></p></div>')};
+function adopt(png,type,name){sig=png;sigType=type||sigType;if(name)$('typed').value=name;
+  [].forEach.call(document.querySelectorAll('.bx.sign'),function(b){b.classList.add('done');b.innerHTML='<img alt="Your signature" src="'+png+'">'});
+  $('sigsheet').classList.remove('on');upd()}
+$('usesaved').onclick=function(){var v=savedGet();if(v)adopt(v.png,v.type||'draw',v.type==='type'?v.name:'')};
+$('forget').onclick=function(){try{localStorage.removeItem(KEY)}catch(e){}savedPaint()};
+$('siguse').onclick=function(){var png=null;if(sigType==='draw'){if(!pad||!pad.drawn()){alert('Draw your signature first.');return}png=pad.png()}else{var t=$('typed').value.trim();if(!t){alert('Type your name first.');return}png=H.typedPng(t)}
+  if(!png){alert('Please try again.');return}
+  try{if($('remember').checked)localStorage.setItem(KEY,JSON.stringify({png:png,type:sigType,name:sigType==='type'?$('typed').value.trim():'',at:Date.now()}));else localStorage.removeItem(KEY)}catch(e){}
+  adopt(png,sigType)};
+function upd(){$('finish').disabled=!(sig&&$('agree').checked);$('barmsg').textContent=!sig?'Tap each yellow box to add your signature.':(!$('agree').checked?'Tick the box to agree, then tap Finish and sign.':'Ready. Tap Finish and sign.')}
+$('agree').addEventListener('change',upd);
+$('finish').onclick=async function(){if(!sig||!$('agree').checked)return;var b=$('finish');b.disabled=true;b.textContent='Signing…';
+  var name=(sigType==='type'?$('typed').value.trim():'')||R.signerName||'';
+  try{await ref.update({status:'signed',signedAt:firebase.firestore.FieldValue.serverTimestamp(),sigImage:sig,sigType:sigType,signedName:String(name).slice(0,120),signDevice:H.device(),agreed:true,docHashSeen:seen});
+    var s2=await ref.get();doneScreen(s2.data())}
+  catch(e){b.textContent='Finish and sign';b.disabled=false;alert('Your signature could not be saved. Check your internet connection and try again. If it keeps failing, the request may have been cancelled.')}};
+$('decline').onclick=function(){$('decsheet').classList.add('on')};$('deccancel').onclick=function(){$('decsheet').classList.remove('on')};
+$('decok').onclick=async function(){var b=$('decok');b.disabled=true;try{await ref.update({status:'declined',declinedAt:firebase.firestore.FieldValue.serverTimestamp(),declineReason:$('decwhy').value.trim().slice(0,500),signDevice:H.device()});$('decsheet').classList.remove('on');var s2=await ref.get();doneScreen(s2.data())}catch(e){b.disabled=false;alert('Could not send. Check your internet connection and try again.')}};
+})();
+</script>
+<style id="rotcover-css">#rotcover{display:none}html.rotland #rotcover{display:flex;position:fixed;inset:0;z-index:2147482000;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center;background:var(--bg,#ECEFF2);color:var(--ink,#14181D);font-family:Lato,system-ui,-apple-system,sans-serif}html.rotland body{overflow:hidden}#rotcover b{font-size:20px;font-weight:800}#rotcover span{font-size:15px;opacity:.78;max-width:340px}</style><script>/* 3.53: phones stay upright. The installed app is locked by the manifest (and asked again here); anywhere a web page
+   cannot lock (a browser tab, any iPhone) a phone turned sideways shows a cover. Tablets and computers are never covered. */
+(function(){try{
+  var d=document.documentElement;
+  function phone(){try{return window.matchMedia('(pointer: coarse)').matches&&Math.min(screen.width,screen.height)<=540}catch(e){return false}}
+  function land(){try{var t=screen.orientation&&screen.orientation.type;if(t)return t.indexOf('landscape')===0;if(typeof window.orientation==='number')return Math.abs(window.orientation)===90;return window.innerWidth>window.innerHeight}catch(e){return false}}
+  function upd(){try{var on=phone()&&land()&&!document.getElementById('hhfsp');if(on!==d.classList.contains('rotland'))d.classList.toggle('rotland',on)}catch(e){}}
+  function mk(){if(document.getElementById('rotcover'))return;var c=document.createElement('div');c.id='rotcover';c.setAttribute('role','alert');
+    c.innerHTML='<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#14506B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><b>Turn Your Phone Upright</b><span>Signing works with your phone upright.</span>';
+    document.body.appendChild(c);upd();
+    try{new MutationObserver(function(){upd()}).observe(document.body,{childList:true})}catch(e){}}
+  try{if(window.matchMedia('(display-mode: standalone)').matches&&screen.orientation&&screen.orientation.lock)screen.orientation.lock('portrait-primary').catch(function(){})}catch(e){}
+  window.addEventListener('resize',upd);window.addEventListener('orientationchange',function(){setTimeout(upd,60)});
+  try{if(screen.orientation&&screen.orientation.addEventListener)screen.orientation.addEventListener('change',upd)}catch(e){}
+  if(document.body)mk();else document.addEventListener('DOMContentLoaded',mk);
+}catch(e){}})();</script><style id="v392a-css">.sglocked,.sglocked canvas{touch-action:auto!important}.sglocked canvas{pointer-events:none!important}.pad{position:relative}.sglock,.sgdone{display:none;position:absolute;z-index:3;border:0;font:inherit;font-weight:800;cursor:pointer}.sglocked>.sglock{display:flex;align-items:center;justify-content:center;inset:0;width:100%;height:100%;background:transparent;padding:0}.sglock span{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:22px;background:#14506B;color:#fff;font-size:15px}.pad:not(.sglocked){outline:2.5px solid #14506B;outline-offset:-2px}.pad:not(.sglocked)>.sgdone{display:block;right:8px;bottom:8px;padding:8px 16px;border-radius:10px;background:#14506B;color:#fff;font-size:14px}</style>
+<script>(function(){function ap(){var ps=document.querySelectorAll('.pad');for(var i=0;i<ps.length;i++){var p=ps[i];if(p.getAttribute('data-sgl')||!p.querySelector('canvas'))continue;p.setAttribute('data-sgl','1');p.classList.add('sglocked');var o=document.createElement('button');o.type='button';o.className='sglock';o.setAttribute('aria-label','Tap to sign');o.innerHTML='<span>\u270D Tap to sign</span>';p.appendChild(o);var d=document.createElement('button');d.type='button';d.className='sgdone';d.textContent='Done';p.appendChild(d)}}
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.sglock,.sgdone');if(!b)return;var p=b.closest('.pad');if(!p)return;e.preventDefault();e.stopPropagation();if(b.className.indexOf('sglock')>-1)p.classList.remove('sglocked');else p.classList.add('sglocked')},true);
+ap();document.addEventListener('DOMContentLoaded',ap);try{new MutationObserver(function(){setTimeout(ap,60)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}})();</script><script id="stg-js">(function(){try{if(window.HHSL_ENV&&window.HHSL_ENV.live===true)return;var p=document.createElement('div');p.className='stg-pill';p.textContent='STAGING';p.hidden=true;document.body.appendChild(p);var h=document.documentElement;function pill(){var g=document.getElementById('auth-gate');p.hidden=!((g&&!g.hidden)||h.classList.contains('onhome')||!document.getElementById('view-home'))}new MutationObserver(pill).observe(h,{attributes:true,attributeFilter:['class']});var g=document.getElementById('auth-gate');if(g)new MutationObserver(pill).observe(g,{attributes:true,attributeFilter:['hidden']});pill();var s=document.getElementById('set-in');if(s)new MutationObserver(function(){var rows=[].slice.call(s.querySelectorAll('.setrow'));var r=rows.filter(function(x){return /Installed app version/i.test(x.textContent)})[0];if(!r||s.querySelector('.stg-env'))return;var n=r.cloneNode(true);n.className+=' stg-env';n.querySelector('.nm2').textContent='Environment';n.querySelector('b').textContent='STAGING: Test Database';n.style.background='#F59E0B';n.style.color='#1a1200';[].forEach.call(n.querySelectorAll('*'),function(e){e.style.color='#1a1200'});r.parentNode.insertBefore(n,r)}).observe(s,{childList:true,subtree:true})}catch(e){}})();</script></body></html>

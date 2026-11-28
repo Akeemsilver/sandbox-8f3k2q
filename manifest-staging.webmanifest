@@ -1,0 +1,32 @@
+{
+  "name": "HHSL STAGING",
+  "short_name": "HHSL STAGING",
+  "description": "HHSL Safety Systems Limited: rosters, crews, ER Log, staff and compliance",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b2a3c",
+  "theme_color": "#F59E0B",
+  "icons": [
+    {
+      "src": "icons/stg-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/stg-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/stg-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "prefer_related_applications": false
+}
